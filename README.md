@@ -1,4 +1,4 @@
-# frontend.gigamike.net
+# The famous Modern Business Template using BootstrapVue
 
 ## Project setup
 ```
