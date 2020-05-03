@@ -1,6 +1,8 @@
 <template>
   <div class="Blog-post">
+    <!-- Page Content -->
     <b-container>
+
       <!-- Page Heading/Breadcrumbs -->
       <h1 class="mt-4 mb-3">Post Title
         <small>by
@@ -15,11 +17,9 @@
         <b-breadcrumb-item active>Blog Home 2</b-breadcrumb-item>
       </b-breadcrumb>
 
-      <div class="row">
-
+      <b-row>
         <!-- Post Content Column -->
-        <div class="col-lg-8">
-
+        <b-col cols="8" lg="8" class="mt-1 mb-4">
           <!-- Preview Image -->
           <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
 
@@ -51,77 +51,93 @@
           <hr>
 
           <!-- Comments Form -->
-          <div class="card my-4">
-            <h5 class="card-header">Leave a Comment:</h5>
-            <div class="card-body">
-              <form>
-                <div class="form-group">
-                  <textarea class="form-control" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-            </div>
-          </div>
+          <b-card header-tag="header" class="my-4">
+            <template v-slot:header>
+              <h5 class="mb-0">Leave a Comment:</h5>
+            </template>
+            <b-card-text>
+              <b-form-textarea
+                    id="textarea"
+                    v-model="text"
+                    placeholder="Enter something..."
+                    rows="3"
+                  ></b-form-textarea>
+              <b-button class="mt-3" type="submit" variant="primary">Submit</b-button>
+            </b-card-text>
+          </b-card>
 
           <!-- Single Comment -->
-          <div class="media mb-4">
-            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-            <div class="media-body">
-              <h5 class="mt-0">Commenter Name</h5>
+          <b-media class="mb-3">
+            <template v-slot:aside>
+              <b-img class="rounded-circle" blank blank-color="#ccc" width="64" alt="placeholder"></b-img>
+            </template>
+
+            <h5 class="mt-0">Commenter Name</h5>
+            <p>
               Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-            </div>
-          </div>
+            </p>
+          </b-media>
 
           <!-- Comment with nested comments -->
-          <div class="media mb-4">
-            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-            <div class="media-body">
-              <h5 class="mt-0">Commenter Name</h5>
+          <b-media class="mb-3">
+            <template v-slot:aside>
+              <b-img class="rounded-circle" blank blank-color="#ccc" width="64" alt="placeholder"></b-img>
+            </template>
+
+            <h5 class="mt-0">Commenter Name</h5>
+            <p>
               Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            </p>
 
-              <div class="media mt-4">
-                <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-                <div class="media-body">
-                  <h5 class="mt-0">Commenter Name</h5>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                </div>
-              </div>
+            <b-media>
+              <template v-slot:aside>
+                <b-img class="rounded-circle" blank blank-color="#ccc" width="64" alt="placeholder"></b-img>
+              </template>
 
-              <div class="media mt-4">
-                <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-                <div class="media-body">
-                  <h5 class="mt-0">Commenter Name</h5>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                </div>
-              </div>
+              <h5 class="mt-0">Commenter Name</h5>
+              <p class="mb-0">
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              </p>
+            </b-media>
 
-            </div>
-          </div>
+            <b-media>
+              <template v-slot:aside>
+                <b-img class="rounded-circle" blank blank-color="#ccc" width="64" alt="placeholder"></b-img>
+              </template>
 
-        </div>
+              <h5 class="mt-0">Commenter Name</h5>
+              <p class="mb-0">
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              </p>
+            </b-media>
+          </b-media>
+        </b-col>
 
         <!-- Sidebar Widgets Column -->
-        <div class="col-md-4">
-
+        <b-col cols="4" md="4" class="mt-1 mb-4">
           <!-- Search Widget -->
-          <div class="card mb-4">
-            <h5 class="card-header">Search</h5>
-            <div class="card-body">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn">
-                  <button class="btn btn-secondary" type="button">Go!</button>
-                </span>
-              </div>
-            </div>
-          </div>
+          <b-card header-tag="header">
+            <template v-slot:header>
+              <h5 class="mb-0">Search</h5>
+            </template>
+            <b-card-text>
+              <b-input-group>
+                <b-form-input type="text" placeholder="Search for..."></b-form-input>
+                <b-input-group-append>
+                  <b-button>Go!</b-button>
+                </b-input-group-append>
+              </b-input-group>
+            </b-card-text>
+          </b-card>
 
           <!-- Categories Widget -->
-          <div class="card my-4">
-            <h5 class="card-header">Categories</h5>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-6">
+          <b-card header-tag="header" class="mt-4 mb-4">
+            <template v-slot:header>
+              <h5 class="mb-0">Categories</h5>
+            </template>
+            <b-card-text>
+              <b-row>
+                <b-col cols="6" lg="6">
                   <ul class="list-unstyled mb-0">
                     <li>
                       <a href="#">Web Design</a>
@@ -133,8 +149,8 @@
                       <a href="#">Freebies</a>
                     </li>
                   </ul>
-                </div>
-                <div class="col-lg-6">
+                </b-col>
+                <b-col cols="6" lg="6">
                   <ul class="list-unstyled mb-0">
                     <li>
                       <a href="#">JavaScript</a>
@@ -146,22 +162,23 @@
                       <a href="#">Tutorials</a>
                     </li>
                   </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+                </b-col>
+              </b-row>
+            </b-card-text>
+          </b-card>
 
           <!-- Side Widget -->
-          <div class="card my-4">
-            <h5 class="card-header">Side Widget</h5>
-            <div class="card-body">
+          <b-card header-tag="header" class="mt-4 mb-4">
+            <template v-slot:header>
+              <h5 class="mb-0">Side Widget</h5>
+            </template>
+            <b-card-text>
               You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
-            </div>
-          </div>
+            </b-card-text>
+          </b-card>
+        </b-col>
+      </b-row>
 
-        </div>
-
-      </div>
     </b-container>
   </div>
 </template>

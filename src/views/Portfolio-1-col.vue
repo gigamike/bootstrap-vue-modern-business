@@ -48,7 +48,9 @@
            aria-controls="my-portfolio"
          ></b-pagination>
        </div>
+       
     </b-container>
+    <!-- /.container -->
   </div>
 </template>
 
