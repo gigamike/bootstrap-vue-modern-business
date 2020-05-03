@@ -1,10 +1,12 @@
 <template>
   <div class="pricing">
+    <!-- Page Content -->
     <b-container>
       <h1 class="mt-4 mb-3">Pricing
         <small>Subheading</small>
       </h1>
 
+      <!-- Page Heading/Breadcrumbs -->
       <b-breadcrumb>
         <b-breadcrumb-item :to="{name: 'Home'}">
           Home
@@ -13,59 +15,90 @@
       </b-breadcrumb>
 
       <!-- Content Row -->
-      <div class="row">
-        <div class="col-lg-4 mb-4">
-          <div class="card h-100">
-            <h3 class="card-header">Basic</h3>
-            <div class="card-body">
-              <div class="display-4">$19.99</div>
-              <div class="font-italic">per month</div>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Cras justo odio</li>
-              <li class="list-group-item">Dapibus ac facilisis in</li>
-              <li class="list-group-item">Vestibulum at eros</li>
-              <li class="list-group-item">
-                <a href="#" class="btn btn-primary">Sign Up!</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-4 mb-4">
-          <div class="card card-outline-primary h-100">
-            <h3 class="card-header bg-primary text-white">Plus</h3>
-            <div class="card-body">
-              <div class="display-4">$39.99</div>
-              <div class="font-italic">per month</div>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Cras justo odio</li>
-              <li class="list-group-item">Dapibus ac facilisis in</li>
-              <li class="list-group-item">Vestibulum at eros</li>
-              <li class="list-group-item">
-                <a href="#" class="btn btn-primary">Sign Up!</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-4 mb-4">
-          <div class="card h-100">
-            <h3 class="card-header">Ultra</h3>
-            <div class="card-body">
-              <div class="display-4">$159.99</div>
-              <div class="font-italic">per month</div>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Cras justo odio</li>
-              <li class="list-group-item">Dapibus ac facilisis in</li>
-              <li class="list-group-item">Vestibulum at eros</li>
-              <li class="list-group-item">
-                <a href="#" class="btn btn-primary">Sign Up!</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <b-row>
+        <b-col cols="4" lg="4" class="mb-4">
+          <b-card no-body>
+            <template v-slot:header>
+              <h4 class="mb-0">Basic</h4>
+            </template>
+
+            <b-card-body>
+              <b-card-text>
+                <div class="display-4">$19.99</div>
+                <div class="font-italic">per month</div>
+              </b-card-text>
+            </b-card-body>
+
+            <b-list-group flush>
+              <b-list-group-item>Cras justo odio</b-list-group-item>
+              <b-list-group-item>Dapibus ac facilisis in</b-list-group-item>
+              <b-list-group-item>Vestibulum at eros</b-list-group-item>
+            </b-list-group>
+
+            <b-card-body>
+              <a href="#" class="btn btn-primary">Sign Up!</a>
+            </b-card-body>
+
+          </b-card>
+        </b-col>
+        <b-col cols="4" lg="4" class="mb-4">
+          <b-card
+            no-body
+            header-bg-variant="primary"
+            header-text-variant="white"
+          >
+            <template v-slot:header>
+              <h4 class="mb-0">Plus</h4>
+            </template>
+
+            <b-card-body>
+              <b-card-text>
+                <div class="display-4">$39.99</div>
+                <div class="font-italic">per month</div>
+              </b-card-text>
+            </b-card-body>
+
+            <b-list-group flush>
+              <b-list-group-item>Cras justo odio</b-list-group-item>
+              <b-list-group-item>Dapibus ac facilisis in</b-list-group-item>
+              <b-list-group-item>Vestibulum at eros</b-list-group-item>
+            </b-list-group>
+
+            <b-card-body>
+              <a href="#" class="btn btn-primary">Sign Up!</a>
+            </b-card-body>
+
+          </b-card>
+        </b-col>
+        <b-col cols="4" lg="4" class="mb-4">
+          <b-card no-body>
+            <template v-slot:header>
+              <h4 class="mb-0">Ultra</h4>
+            </template>
+
+            <b-card-body>
+              <b-card-text>
+                <div class="display-4">$159.99</div>
+                <div class="font-italic">per month</div>
+              </b-card-text>
+            </b-card-body>
+
+            <b-list-group flush>
+              <b-list-group-item>Cras justo odio</b-list-group-item>
+              <b-list-group-item>Dapibus ac facilisis in</b-list-group-item>
+              <b-list-group-item>Vestibulum at eros</b-list-group-item>
+            </b-list-group>
+
+            <b-card-body>
+              <a href="#" class="btn btn-primary">Sign Up!</a>
+            </b-card-body>
+
+          </b-card>
+        </b-col>
+      </b-row>
+      <!-- /.row -->
+
     </b-container>
+    <!-- /.container -->
   </div>
 </template>

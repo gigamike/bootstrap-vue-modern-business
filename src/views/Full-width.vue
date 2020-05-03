@@ -1,10 +1,12 @@
 <template>
   <div class="full-width">
+    <!-- Page Content -->
     <b-container>
       <h1 class="mt-4 mb-3">Full Width
         <small>Subheading</small>
       </h1>
 
+      <!-- Page Heading/Breadcrumbs -->
       <b-breadcrumb>
         <b-breadcrumb-item :to="{name: 'Home'}">
           Home
@@ -16,5 +18,6 @@
         <a href="http://startbootstrap.com/template-categories/unstyled">http://startbootstrap.com/template-categories/unstyled</a>.</p>
 
     </b-container>
+    <!-- /.container -->
   </div>
 </template>

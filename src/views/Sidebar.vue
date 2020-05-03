@@ -1,6 +1,9 @@
 <template>
   <div class="sidebar">
+    <!-- Page Content -->
     <b-container>
+
+      <!-- Page Heading/Breadcrumbs -->
       <h1 class="mt-4 mb-3">Sidebar Page
         <small>Subheading</small>
       </h1>
@@ -13,9 +16,9 @@
       </b-breadcrumb>
 
       <!-- Content Row -->
-      <div class="row">
+      <b-row>
         <!-- Sidebar Column -->
-        <div class="col-lg-3 mb-4">
+        <b-col cols="3" lg="3" class="mb-4">
           <div class="list-group">
             <a href="index.html" class="list-group-item">Home</a>
             <a href="about.html" class="list-group-item">About</a>
@@ -35,13 +38,14 @@
             <a href="404.html" class="list-group-item">404</a>
             <a href="pricing.html" class="list-group-item">Pricing Table</a>
           </div>
-        </div>
+        </b-col>
         <!-- Content Column -->
-        <div class="col-lg-9 mb-4">
+        <b-col cols="9" lg="9" class="mb-4">
           <h2>Section Heading</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, et temporibus, facere perferendis veniam beatae non debitis, numquam blanditiis necessitatibus vel mollitia dolorum laudantium, voluptate dolores iure maxime ducimus fugit.</p>
-        </div>
-      </div>
+        </b-col>
+      </b-row>
+
     </b-container>
   </div>
 </template>
