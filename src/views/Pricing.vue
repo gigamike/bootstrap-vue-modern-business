@@ -19,7 +19,7 @@
         <b-col cols="4" lg="4" class="mb-4">
           <b-card no-body>
             <template v-slot:header>
-              <h4 class="mb-0">Basic</h4>
+              <h3 class="mb-0">Basic</h3>
             </template>
 
             <b-card-body>
@@ -48,7 +48,7 @@
             header-text-variant="white"
           >
             <template v-slot:header>
-              <h4 class="mb-0">Plus</h4>
+              <h3 class="mb-0">Plus</h3>
             </template>
 
             <b-card-body>
@@ -73,7 +73,7 @@
         <b-col cols="4" lg="4" class="mb-4">
           <b-card no-body>
             <template v-slot:header>
-              <h4 class="mb-0">Ultra</h4>
+              <h3 class="mb-0">Ultra</h3>
             </template>
 
             <b-card-body>

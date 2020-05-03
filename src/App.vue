@@ -3,7 +3,7 @@
     <div>
       <b-navbar toggleable="lg" type="dark" variant="dark" fixed="top">
         <b-container>
-          <b-navbar-brand :to="{name: 'Home'}">Vue Bootstrap</b-navbar-brand>
+          <b-navbar-brand :to="{name: 'Home'}">BootstrapVue</b-navbar-brand>
 
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -52,5 +52,5 @@
 </template>
 
 <style>
-body { padding-top: 60px; }
+body { padding-top: 50px; }
 </style>

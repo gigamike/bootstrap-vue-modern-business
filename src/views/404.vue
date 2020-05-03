@@ -15,7 +15,7 @@
         <b-breadcrumb-item active>404</b-breadcrumb-item>
       </b-breadcrumb>
 
-      <b-jumbotron header="BootstrapVue" lead="Bootstrap v4 Components for Vue.js 2">
+      <b-jumbotron>
         <h1 class="display-1">404</h1>
         <p>The page you're looking for could not be found. Here are some helpful links to get you back on track:</p>
         <ul>
