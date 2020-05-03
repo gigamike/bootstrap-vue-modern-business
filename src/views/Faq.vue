@@ -5,12 +5,12 @@
         <small>Subheading</small>
       </h1>
 
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="index.html">Home</a>
-        </li>
-        <li class="breadcrumb-item active">FAQ</li>
-      </ol>
+      <b-breadcrumb>
+        <b-breadcrumb-item :to="{name: 'Home'}">
+          Home
+        </b-breadcrumb-item>
+        <b-breadcrumb-item active>FAQ</b-breadcrumb-item>
+      </b-breadcrumb>
 
       <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
         <div class="card">

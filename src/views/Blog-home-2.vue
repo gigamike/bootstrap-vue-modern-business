@@ -6,12 +6,12 @@
         <small>Subheading</small>
       </h1>
 
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="index.html">Home</a>
-        </li>
-        <li class="breadcrumb-item active">Blog Home 2</li>
-      </ol>
+      <b-breadcrumb>
+        <b-breadcrumb-item :to="{name: 'Home'}">
+          Home
+        </b-breadcrumb-item>
+        <b-breadcrumb-item active>Blog Home 2</b-breadcrumb-item>
+      </b-breadcrumb>
 
       <!-- Blog Post -->
       <div class="card mb-4">

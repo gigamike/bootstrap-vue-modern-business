@@ -1,26 +1,28 @@
 <template>
   <div class="contact">
+    <!-- Page Content -->
     <b-container>
+
+      <!-- Page Heading/Breadcrumbs -->
       <h1 class="mt-4 mb-3">Contact
         <small>Subheading</small>
       </h1>
 
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="index.html">Home</a>
-        </li>
-        <li class="breadcrumb-item active">Contact</li>
-      </ol>
+      <b-breadcrumb>
+        <b-breadcrumb-item :to="{name: 'Home'}">
+          Home
+        </b-breadcrumb-item>
+        <b-breadcrumb-item active>Contact</b-breadcrumb-item>
+      </b-breadcrumb>
 
       <!-- Content Row -->
-      <div class="row">
+      <b-row>
         <!-- Map Column -->
-        <div class="col-lg-8 mb-4">
+        <b-col cols=8 lg="8" clas="mb-4">
           <!-- Embedded Google Map -->
           <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
-        </div>
-        <!-- Contact Details Column -->
-        <div class="col-lg-4 mb-4">
+        </b-col>
+        <b-col cols=4 lg="4" clas="mb-4">
           <h3>Contact Details</h3>
           <p>
             3481 Melrose Place
@@ -38,48 +40,107 @@
           <p>
             <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM
           </p>
-        </div>
-      </div>
+        </b-col>
+      </b-row>
       <!-- /.row -->
 
       <!-- Contact Form -->
       <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-      <div class="row">
-        <div class="col-lg-8 mb-4">
+      <b-row>
+        <b-col cols=8 lg="8" clas="mb-4">
           <h3>Send us a Message</h3>
-          <form name="sentMessage" id="contactForm" novalidate>
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>Full Name:</label>
-                <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
-                <p class="help-block"></p>
-              </div>
-            </div>
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>Phone Number:</label>
-                <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
-              </div>
-            </div>
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>Email Address:</label>
-                <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
-              </div>
-            </div>
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>Message:</label>
-                <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
-              </div>
-            </div>
+          <b-form @submit="onSubmit" name="sentMessage" id="contactForm" novalidate>
+            <b-form-group
+              id="input-group-1"
+              label="Full Name:"
+              label-for="name"
+            >
+              <b-form-input
+                id="name"
+                v-model="form.name"
+                type="text"
+                required
+                data-validation-required-message="Please enter your name."
+              ></b-form-input>
+            </b-form-group>
+
+            <b-form-group
+              id="input-group-2"
+              label="Phone Number:"
+              label-for="phone"
+            >
+              <b-form-input
+                id="phone"
+                v-model="form.name"
+                type="text"
+                required
+                data-validation-required-message="Please enter your phone number."
+              ></b-form-input>
+            </b-form-group>
+
+            <b-form-group
+              id="input-group-3"
+              label="Email Address:"
+              label-for="email"
+            >
+              <b-form-input
+                id="email"
+                v-model="form.email"
+                type="email"
+                required
+                data-validation-required-message="Please enter your email address."
+              ></b-form-input>
+            </b-form-group>
+
+            <b-form-group
+              id="input-group-4"
+              label="Message:"
+              label-for="message"
+            >
+              <b-form-textarea
+                id="message"
+                v-model="message"
+                required data-validation-required-message="Please enter your message"
+                maxlength="999"
+                style="resize:none"
+                rows="10"
+                cols="100"
+              ></b-form-textarea>
+            </b-form-group>
+
             <div id="success"></div>
             <!-- For success/fail messages -->
-            <button type="submit" class="btn btn-primary" id="sendMessageButton">Send Message</button>
-          </form>
-        </div>
 
-      </div>
+            <b-form-group
+            >
+            <b-button type="submit" variant="primary" id="sendMessageButton">Send Message</b-button>
+            </b-form-group>
+          </b-form>
+        </b-col>
+      </b-row>
+
+
     </b-container>
   </div>
 </template>
+
+<script>
+  export default {
+    data() {
+      return {
+        form: {
+          name: '',
+          phone: '',
+          email: '',
+          message: ''
+        }
+      }
+    },
+    methods: {
+      onSubmit(evt) {
+        evt.preventDefault()
+        alert(JSON.stringify(this.form))
+      }
+    }
+  }
+</script>

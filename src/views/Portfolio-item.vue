@@ -5,12 +5,12 @@
         <small>Subheading</small>
       </h1>
 
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="index.html">Home</a>
-        </li>
-        <li class="breadcrumb-item active">Portfolio Item</li>
-      </ol>
+      <b-breadcrumb>
+        <b-breadcrumb-item :to="{name: 'Home'}">
+          Home
+        </b-breadcrumb-item>
+        <b-breadcrumb-item active>Portfolio Item</b-breadcrumb-item>
+      </b-breadcrumb>
 
       <!-- Portfolio Item Row -->
       <div class="row">

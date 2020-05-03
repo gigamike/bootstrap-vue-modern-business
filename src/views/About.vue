@@ -1,17 +1,19 @@
 <template>
   <div class="about">
+    <!-- Page Content -->
     <b-container>
+
       <!-- Page Heading/Breadcrumbs -->
       <h1 class="mt-4 mb-3">About
         <small>Subheading</small>
       </h1>
 
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <router-link :to="{name: 'Home'}">Home</router-link>
-        </li>
-        <li class="breadcrumb-item active">About</li>
-      </ol>
+      <b-breadcrumb>
+        <b-breadcrumb-item :to="{name: 'Home'}">
+          Home
+        </b-breadcrumb-item>
+        <b-breadcrumb-item active>About</b-breadcrumb-item>
+      </b-breadcrumb>
 
       <!-- Intro Content -->
       <b-row>
@@ -85,6 +87,9 @@
         </b-col>
       </b-row>
       <!-- /.row -->
+      
     </b-container>
+    <!-- /.container -->
+
   </div>
 </template>

@@ -1,56 +1,55 @@
 <template>
   <div class="services">
+    <!-- Page Content -->
     <b-container>
       <h1 class="mt-4 mb-3">Services
         <small>Subheading</small>
       </h1>
 
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="index.html">Home</a>
-        </li>
-        <li class="breadcrumb-item active">Services</li>
-      </ol>
+      <!-- Page Heading/Breadcrumbs -->
+      <b-breadcrumb>
+        <b-breadcrumb-item :to="{name: 'Home'}">
+          Home
+        </b-breadcrumb-item>
+        <b-breadcrumb-item active>Services</b-breadcrumb-item>
+      </b-breadcrumb>
 
       <!-- Image Header -->
       <img class="img-fluid rounded mb-4" src="http://placehold.it/1200x300" alt="">
 
       <!-- Marketing Icons Section -->
-      <div class="row">
-        <div class="col-lg-4 mb-4">
-          <div class="card h-100">
-            <h4 class="card-header">Card Title</h4>
-            <div class="card-body">
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 mb-4">
-          <div class="card h-100">
-            <h4 class="card-header">Card Title</h4>
-            <div class="card-body">
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 mb-4">
-          <div class="card h-100">
-            <h4 class="card-header">Card Title</h4>
-            <div class="card-body">
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <b-card-group deck class="mb-4">
+        <b-card header-tag="header" footer-tag="footer">
+          <template v-slot:header>
+            <h4 class="mb-0">Card Title</h4>
+          </template>
+          <b-card-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</b-card-text>
+          <template v-slot:footer>
+            <b-button href="#" variant="primary">Learn More</b-button>
+          </template>
+        </b-card>
+
+        <b-card header-tag="header" footer-tag="footer">
+          <template v-slot:header>
+            <h4 class="mb-0">Card Title</h4>
+          </template>
+          <b-card-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</b-card-text>
+          <template v-slot:footer>
+            <b-button href="#" variant="primary">Learn More</b-button>
+          </template>
+        </b-card>
+
+        <b-card header-tag="header" footer-tag="footer">
+          <template v-slot:header>
+            <h4 class="mb-0">Card Title</h4>
+          </template>
+          <b-card-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</b-card-text>
+          <template v-slot:footer>
+            <b-button href="#" variant="primary">Learn More</b-button>
+          </template>
+        </b-card>
+
+      </b-card-group>
     </b-container>
   </div>
 </template>

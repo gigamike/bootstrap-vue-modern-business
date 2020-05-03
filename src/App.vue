@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div>
-      <b-navbar toggleable="lg" type="dark" variant="dark">
+      <b-navbar toggleable="lg" type="dark" variant="dark" fixed="top">
         <b-container>
           <b-navbar-brand :to="{name: 'Home'}">Vue Bootstrap</b-navbar-brand>
 
@@ -74,5 +74,5 @@
 </template>
 
 <style>
-
+body { padding-top: 60px; }
 </style>
